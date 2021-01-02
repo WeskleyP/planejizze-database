@@ -20,9 +20,9 @@ declare
     plan1 bigint;
     plan2 bigint;
 begin
-    insert into planejamento (id, alerta_porcentagem, ativo, data_fim, data_inicio, descricao, meta_gastos, usuario_id) 
+    insert into planejamento (id, alerta_porcentagem, ativo, data_inicio, data_fim, descricao, meta_gastos, usuario_id) 
     values(nextval('planejamento_sequence_pkey'), 80, true, TO_DATE('01/11/2020', 'DD/MM/YYYY'), TO_DATE('30/11/2020', 'DD/MM/YYYY'), 'Planejamento Novembro', 5000, 1) returning id into plan1;
-    insert into planejamento (id, alerta_porcentagem, ativo, data_fim, data_inicio, descricao, meta_gastos, usuario_id) 
+    insert into planejamento (id, alerta_porcentagem, ativo, data_inicio, data_fim, descricao, meta_gastos, usuario_id) 
     values(nextval('planejamento_sequence_pkey'), 90, true, TO_DATE('01/12/2020', 'DD/MM/YYYY'), TO_DATE('31/12/2020', 'DD/MM/YYYY'), 'Planejamento Dezembro', 7000, 1) returning id into plan2;
     insert into planejamento_categoria (valor_max_gasto, planejamento_id, categoria_id) values(1000, plan1, 1);
     insert into planejamento_categoria (valor_max_gasto, planejamento_id, categoria_id) values(2000, plan1, 2);
